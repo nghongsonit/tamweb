@@ -3,3 +3,6 @@
 *.jpg
 *.jpeg
 .claude/
+.vercel/
+.agents/
+skills-lock.json

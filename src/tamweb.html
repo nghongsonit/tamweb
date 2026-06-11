@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Tâm Web — Trang web cảm xúc cho những khoảnh khắc đặc biệt. Ngày Mẹ, Valentine, Sinh nhật, Kỷ niệm. Demo trong 24h.">
-<title>Tâm Web — Trang Web Cảm Xúc Cho Người Bạn Thương</title>
+<meta name="description" content="Tâm Web tạo trang web cảm xúc từ ảnh và kỷ niệm của bạn — món quà họ mở lại được dù 1 năm hay 10 năm sau. Xem demo trong 24h, ưng ý mới trả tiền.">
+<title>Tâm Web — Món quà không tàn cho người bạn thương</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -126,7 +126,7 @@
   /* ── HERO ── */
   .hero {
     min-height: 100dvh;
-    display: grid; grid-template-columns: 1fr 1fr;
+    display: grid; grid-template-columns: 1.05fr 0.95fr;
     align-items: center;
     padding: 96px 5vw 0;
     position: relative; overflow: hidden;
@@ -134,24 +134,25 @@
     width: 100%;
   }
 
-  .hero-left { padding-right: 40px; padding-bottom: 60px; }
+  .hero-left { padding-right: 48px; padding-bottom: 60px; min-width: 0; }
 
   .hero h1 {
     font-family: var(--serif);
-    font-size: clamp(42px, 5.5vw, 76px);
-    font-weight: 400; line-height: 1.08;
+    font-size: clamp(38px, 5vw, 68px);
+    font-weight: 400; line-height: 1.1;
     color: var(--ink); margin-bottom: 24px;
     letter-spacing: -0.02em;
+    overflow-wrap: break-word;
   }
   .hero h1 em { color: var(--forest); font-style: italic; }
 
   .hero-sub {
-    font-size: 17px; color: var(--muted);
-    line-height: 1.7; margin-bottom: 36px;
-    max-width: 400px;
+    font-size: 17px; color: var(--ink-mid);
+    line-height: 1.7; margin-bottom: 32px;
+    max-width: 440px;
   }
 
-  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
 
   .btn-primary {
     background: var(--forest); color: #fff;
@@ -165,24 +166,10 @@
   .btn-primary:hover { background: var(--forest-light); transform: translateY(-1px); }
   .btn-primary:active { transform: translateY(0); }
 
-  .btn-ghost {
-    color: var(--muted); font-size: 14px;
-    text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
-    transition: color .2s; min-height: 44px; padding: 0 4px;
+  .hero-reassure {
+    font-size: 13px; color: var(--muted);
+    margin-top: 14px;
   }
-  .btn-ghost:hover { color: var(--forest); }
-  .btn-ghost svg { width: 15px; height: 15px; flex-shrink: 0; }
-
-  .hero-proof {
-    display: flex; gap: 28px; margin-top: 44px; flex-wrap: wrap;
-    padding-top: 32px; border-top: 1px solid var(--bone-deep);
-  }
-  .proof-item { display: flex; flex-direction: column; }
-  .proof-num {
-    font-family: var(--serif); font-size: 30px; font-weight: 400;
-    color: var(--forest); line-height: 1;
-  }
-  .proof-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
   /* Hero Right - real photo */
   .hero-right {
@@ -190,13 +177,13 @@
     display: flex; align-items: center; overflow: hidden;
   }
   .hero-img {
-    width: 100%; height: 88%;
+    width: 100%; height: 86%;
     object-fit: cover; border-radius: 20px 20px 0 0;
-    filter: brightness(0.96) saturate(0.9);
+    filter: brightness(0.96) saturate(0.92);
     align-self: flex-end;
   }
   .hero-badge {
-    position: absolute; bottom: 14%; left: -28px;
+    position: absolute; bottom: 16%; left: -28px;
     background: #fff;
     border-radius: var(--r);
     padding: 12px 16px;
@@ -217,173 +204,179 @@
     .badge-pulse { animation: none; }
   }
 
-  /* ── WHY SECTION (replaces 3-col pain cards) ── */
+  /* ── LEAD — đoạn đồng cảm ── */
+  .lead-section { padding: 100px 5vw 88px; }
+  .lead-inner { max-width: 760px; margin: 0 auto; }
+  .lead-text {
+    font-family: var(--serif);
+    font-size: clamp(22px, 2.6vw, 32px);
+    font-weight: 400; line-height: 1.4;
+    color: var(--ink); letter-spacing: -0.01em;
+  }
+  .lead-text em { color: var(--forest); font-style: italic; }
+  .lead-body {
+    font-size: 17px; color: var(--ink-mid);
+    line-height: 1.8; margin-top: 28px;
+    max-width: 640px;
+  }
+
+  /* ── LEAD TESTIMONIAL (mở đường) ── */
+  .lead-quote-section { padding: 0 5vw 100px; }
+  .lead-quote-inner { max-width: 860px; margin: 0 auto; }
+  .lead-quote {
+    background: var(--forest); color: #fff;
+    border-radius: var(--r);
+    padding: 48px clamp(28px, 5vw, 56px);
+    position: relative;
+  }
+  .lead-quote blockquote {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.4vw, 28px);
+    font-weight: 400; font-style: italic;
+    line-height: 1.5; letter-spacing: -0.01em;
+  }
+  .lead-quote-author {
+    display: flex; align-items: center; gap: 12px;
+    margin-top: 28px;
+  }
+  .lead-quote-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--amber-light); flex-shrink: 0;
+  }
+  .lead-quote-avatar svg { width: 20px; height: 20px; }
+  .lead-quote-name { font-size: 14px; font-weight: 500; color: #fff; }
+  .lead-quote-meta { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+
+  /* ── MECHANISM — "Tin nhắn mất đi, trang web ở lại" ── */
   .why-section {
-    background: var(--forest);
-    color: #fff;
+    background: var(--bone-deep);
+    color: var(--ink);
     padding: 100px 5vw;
   }
   .why-inner { max-width: 1200px; margin: 0 auto; }
 
   .why-layout {
-    display: grid; grid-template-columns: 1fr 1fr;
+    display: grid; grid-template-columns: 1fr 1.15fr;
     gap: 80px; align-items: start;
   }
 
-  .why-left { }
   .why-heading {
     font-family: var(--serif);
-    font-size: clamp(30px, 3.5vw, 52px);
+    font-size: clamp(30px, 3.5vw, 50px);
     font-weight: 400; line-height: 1.15;
-    margin-bottom: 20px;
+    margin-bottom: 20px; letter-spacing: -0.02em;
   }
-  .why-heading em { color: var(--amber-light); font-style: italic; }
-  .why-body { font-size: 16px; color: rgba(255,255,255,0.6); line-height: 1.75; max-width: 380px; }
+  .why-heading em { color: var(--forest); font-style: italic; }
+  .why-body { font-size: 16px; color: var(--ink-mid); line-height: 1.75; max-width: 380px; }
 
   .why-right { padding-top: 8px; }
   .why-list { display: flex; flex-direction: column; gap: 0; }
   .why-item {
-    padding: 24px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    display: grid; grid-template-columns: 40px 1fr;
-    gap: 16px; align-items: start;
+    padding: 26px 0;
+    border-bottom: 1px solid rgba(28,58,46,0.12);
+    display: grid; grid-template-columns: 28px 1fr;
+    gap: 18px; align-items: start;
   }
-  .why-item:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
-  .why-num {
-    font-family: var(--serif); font-size: 14px;
-    color: var(--amber-light); padding-top: 2px;
-    font-style: italic;
+  .why-item:first-child { border-top: 1px solid rgba(28,58,46,0.12); }
+  .why-icon {
+    color: var(--forest); padding-top: 2px;
+    display: flex;
   }
-  .why-title { font-size: 16px; font-weight: 500; color: #fff; margin-bottom: 6px; }
-  .why-desc { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; }
-
-  /* ── SERVICES ── */
-  .services-section { padding: 100px 5vw; }
-  .services-inner { max-width: 1200px; margin: 0 auto; }
-
-  .section-head { margin-bottom: 64px; }
-  .section-title {
+  .why-icon svg { width: 22px; height: 22px; }
+  .why-line-strike { color: var(--muted); }
+  .why-line-strike s { text-decoration-color: rgba(107,117,110,0.55); }
+  .why-title { font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 6px; line-height: 1.45; }
+  .why-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
+  .why-closer {
+    grid-column: 1 / -1;
     font-family: var(--serif);
-    font-size: clamp(32px, 4vw, 56px);
-    font-weight: 400; line-height: 1.1;
-    color: var(--ink); max-width: 520px;
+    font-size: clamp(18px, 2vw, 22px);
+    font-style: italic; color: var(--forest);
+    margin-top: 36px; line-height: 1.5;
+  }
+
+  /* ── OAPO BODY — 3 khối xử lý lo lắng ── */
+  .body-section { padding: 100px 5vw; }
+  .body-inner { max-width: 1100px; margin: 0 auto; }
+  .body-head { margin-bottom: 64px; max-width: 620px; }
+  .body-head h2 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 3.8vw, 52px);
+    font-weight: 400; line-height: 1.12;
     letter-spacing: -0.02em;
   }
-  .section-title em { color: var(--forest); font-style: italic; }
-  .section-sub {
-    font-size: 16px; color: var(--muted);
-    margin-top: 16px; max-width: 420px; line-height: 1.7;
-  }
+  .body-head h2 em { color: var(--forest); font-style: italic; }
+  .body-head p { font-size: 16px; color: var(--muted); margin-top: 16px; line-height: 1.7; }
 
-  /* Bento-style services: 2+2+2+2 with two full-width featured rows */
-  .services-bento {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto auto;
-    gap: 16px;
+  .oapo-block {
+    display: grid; grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px; align-items: start;
+    padding: 56px 0;
+    border-top: 1px solid var(--bone-deep);
   }
-  .svc-card {
-    background: #fff;
-    border: 1px solid rgba(28,58,46,0.08);
-    border-radius: var(--r);
-    padding: 24px 20px;
-    transition: border-color .2s, transform .2s;
-    position: relative; overflow: hidden;
-  }
-  .svc-card.wide {
-    grid-column: span 2;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;
-  }
-  .svc-card.featured {
-    background: var(--forest); color: #fff;
-  }
-  .svc-card.featured .svc-name { color: #fff; }
-  .svc-card.featured .svc-desc { color: rgba(255,255,255,0.65); }
-  .svc-card.featured .svc-price { color: var(--amber-light); }
-  .svc-card.featured .svc-time { color: rgba(255,255,255,0.45); }
-  .svc-card.tinted {
-    background: var(--bone-deep);
-  }
-  @media (hover: hover) {
-    .svc-card:hover { border-color: var(--forest-light); transform: translateY(-3px); }
-    .svc-card.featured:hover { border-color: var(--forest-mid); }
-  }
-  .svc-icon { font-size: 26px; margin-bottom: 14px; display: block; }
-  .svc-name { font-size: 17px; font-weight: 500; margin-bottom: 8px; color: var(--ink); }
-  .svc-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
-  .svc-meta { display: flex; flex-direction: column; gap: 3px; }
-  .svc-price { font-size: 14px; font-weight: 500; color: var(--forest); }
-  .svc-time { font-size: 11px; color: var(--muted); letter-spacing: 0.03em; }
-
-  /* ── PORTFOLIO ── */
-  .portfolio-section { padding: 100px 5vw; background: var(--bone-deep); }
-  .portfolio-inner { max-width: 1200px; margin: 0 auto; }
-
-  .portfolio-header {
-    display: flex; justify-content: space-between;
-    align-items: flex-end; margin-bottom: 48px;
-  }
-  .portfolio-title {
+  .oapo-block:last-of-type { border-bottom: 1px solid var(--bone-deep); }
+  .oapo-worry {
     font-family: var(--serif);
-    font-size: clamp(30px, 3.5vw, 50px);
-    font-weight: 400; line-height: 1.12;
-    max-width: 400px; letter-spacing: -0.02em;
+    font-size: clamp(22px, 2.4vw, 30px);
+    font-weight: 400; line-height: 1.3;
+    color: var(--ink); letter-spacing: -0.01em;
   }
-  .portfolio-title em { color: var(--forest); font-style: italic; }
-  .portfolio-note {
-    font-size: 13px; color: var(--muted); max-width: 220px; text-align: right;
-    line-height: 1.6;
+  .oapo-worry .q { color: var(--forest); font-style: italic; }
+  .oapo-body p { font-size: 16px; color: var(--ink-mid); line-height: 1.8; }
+  .oapo-body p + p { margin-top: 18px; }
+  .oapo-inline-quote {
+    border-left: 2px solid var(--amber);
+    padding: 4px 0 4px 20px; margin: 24px 0;
+  }
+  .oapo-inline-quote blockquote {
+    font-family: var(--serif); font-style: italic;
+    font-size: 18px; color: var(--ink); line-height: 1.5;
+  }
+  .oapo-inline-quote cite { font-style: normal; font-size: 13px; color: var(--muted); display: block; margin-top: 8px; }
+  .oapo-takeaway {
+    font-weight: 500; color: var(--forest); margin-top: 22px !important;
+  }
+  /* Proof slot — ảnh web thật đã giao (bằng chứng) */
+  .oapo-proof-slot {
+    margin: 28px 0 0; text-align: center;
+  }
+  .oapo-proof-slot img {
+    width: 100%; height: auto; display: block;
+    border-radius: var(--r);
+    box-shadow: 0 18px 40px -20px rgba(28,58,46,0.35);
+  }
+  .oapo-proof-slot .proof-note {
+    font-size: 13px; color: var(--muted); line-height: 1.6;
+    margin-top: 14px;
   }
 
-  /* Asymmetric portfolio: 2 + 1 layout */
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: 5fr 4fr 3fr;
-    gap: 16px; align-items: start;
+  /* ── BRAND STORY (thay cho portfolio fake) ── */
+  .story-section { padding: 100px 5vw; background: var(--forest); color: #fff; }
+  .story-inner { max-width: 1100px; margin: 0 auto; }
+  .story-layout {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 72px; align-items: center;
   }
-  .portfolio-card {
-    border-radius: var(--r);
-    overflow: hidden;
-    background: #fff;
-    transition: transform .25s;
+  .story-eyebrow {
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--amber-light); font-weight: 500; margin-bottom: 20px; display: block;
   }
-  @media (hover: hover) {
-    .portfolio-card:hover { transform: translateY(-5px); }
+  .story-heading {
+    font-family: var(--serif);
+    font-size: clamp(30px, 3.5vw, 48px);
+    font-weight: 400; line-height: 1.15;
+    margin-bottom: 24px; letter-spacing: -0.02em;
   }
-  .portfolio-thumb {
-    aspect-ratio: 3/4;
-    position: relative; overflow: hidden;
+  .story-heading em { color: var(--amber-light); font-style: italic; }
+  .story-body p { font-size: 16px; color: rgba(255,255,255,0.72); line-height: 1.8; }
+  .story-body p + p { margin-top: 18px; }
+  .story-media {
+    border-radius: var(--r); overflow: hidden;
+    aspect-ratio: 16/10; position: relative;
   }
-  .portfolio-thumb img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform .4s ease;
-  }
-  .portfolio-card:hover .portfolio-thumb img { transform: scale(1.04); }
-  .portfolio-thumb.p1 { background: linear-gradient(160deg, #E8F0EC, #C8DDD3); }
-  .portfolio-thumb.p2 { background: linear-gradient(160deg, #EDE8E0, #D4C9B8); }
-  .portfolio-thumb.p3 { background: linear-gradient(160deg, #E0E8F0, #C8D4DD); }
-  .portfolio-thumb-inner {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 52px; flex-direction: column; gap: 8px;
-  }
-  .portfolio-thumb-label {
-    font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--muted); opacity: 0.7;
-  }
-  .portfolio-info { padding: 16px 18px 18px; }
-  .portfolio-kind {
-    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--forest); font-weight: 500; margin-bottom: 6px;
-  }
-  .portfolio-name { font-size: 16px; font-weight: 500; margin-bottom: 4px; color: var(--ink); }
-  .portfolio-meta { font-size: 12px; color: var(--muted); }
-  .portfolio-link {
-    display: inline-flex; align-items: center; gap: 4px;
-    margin-top: 12px; font-size: 13px; color: var(--forest);
-    text-decoration: none; transition: gap .2s;
-  }
-  .portfolio-link:hover { gap: 8px; }
+  .story-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   /* ── PROCESS ── */
   .process-section { padding: 100px 5vw; }
@@ -392,20 +385,19 @@
     display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
   }
   .process-left { position: sticky; top: 100px; }
-  .process-eyebrow {
-    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--forest); font-weight: 500; margin-bottom: 20px; display: block;
-  }
   .process-heading {
     font-family: var(--serif);
-    font-size: clamp(28px, 3vw, 48px);
+    font-size: clamp(28px, 3.2vw, 48px);
     font-weight: 400; line-height: 1.15;
     letter-spacing: -0.02em;
   }
   .process-heading em { color: var(--forest); font-style: italic; }
   .process-desc {
-    font-size: 15px; color: var(--muted);
-    margin-top: 20px; line-height: 1.75;
+    font-size: 16px; color: var(--muted);
+    margin-top: 20px; line-height: 1.75; max-width: 380px;
+  }
+  .process-reassure {
+    margin-top: 28px; font-size: 15px; font-weight: 500; color: var(--forest);
   }
 
   .process-steps { display: flex; flex-direction: column; gap: 0; }
@@ -423,7 +415,6 @@
     font-family: var(--serif); font-size: 17px; font-weight: 400;
     flex-shrink: 0; margin-top: 4px;
   }
-  .step-body {}
   .step-title { font-size: 18px; font-weight: 500; margin-bottom: 8px; color: var(--ink); }
   .step-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
   .step-tag {
@@ -433,9 +424,26 @@
     border-radius: var(--r-pill);
   }
 
+  /* ── CLOSE — Reframe giá ── */
+  .close-section { padding: 100px 5vw; background: var(--bone-deep); }
+  .close-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+  .close-lead {
+    font-family: var(--serif);
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 400; line-height: 1.3;
+    color: var(--ink); letter-spacing: -0.02em;
+  }
+  .close-lead em { color: var(--forest); font-style: italic; }
+  .close-body {
+    font-size: 17px; color: var(--ink-mid);
+    line-height: 1.8; margin-top: 28px;
+    max-width: 640px; margin-left: auto; margin-right: auto;
+  }
+  .close-body strong { color: var(--forest); font-weight: 500; }
+
   /* ── PRICING ── */
-  .pricing-section { padding: 100px 5vw; background: var(--bone-deep); }
-  .pricing-inner { max-width: 1000px; margin: 0 auto; }
+  .pricing-section { padding: 100px 5vw; }
+  .pricing-inner { max-width: 1080px; margin: 0 auto; }
   .pricing-header { text-align: center; margin-bottom: 56px; }
   .pricing-heading {
     font-family: var(--serif);
@@ -447,12 +455,14 @@
 
   .pricing-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    align-items: start;
   }
   .pricing-card {
     background: #fff; border-radius: var(--r);
     padding: 32px 28px;
     border: 1px solid rgba(28,58,46,0.08);
     position: relative; transition: transform .2s;
+    display: flex; flex-direction: column;
   }
   @media (hover: hover) {
     .pricing-card:hover { transform: translateY(-3px); }
@@ -474,25 +484,25 @@
   .pricing-card.featured .pricing-tier { color: rgba(255,255,255,0.55); }
   .pricing-price {
     font-family: var(--serif); font-size: 40px;
-    font-weight: 400; color: var(--forest); margin-bottom: 4px;
+    font-weight: 400; color: var(--forest); margin-bottom: 6px;
     letter-spacing: -0.02em;
   }
   .pricing-card.featured .pricing-price { color: #fff; }
   .pricing-price sup { font-size: 18px; }
-  .pricing-note { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
-  .pricing-card.featured .pricing-note { color: rgba(255,255,255,0.5); }
+  .pricing-note { font-size: 13px; color: var(--muted); margin-bottom: 24px; font-style: italic; line-height: 1.5; }
+  .pricing-card.featured .pricing-note { color: rgba(255,255,255,0.6); }
   .pricing-divider { height: 1px; background: var(--bone-deep); margin-bottom: 24px; }
   .pricing-card.featured .pricing-divider { background: rgba(255,255,255,0.12); }
   .pricing-features {
     list-style: none; display: flex; flex-direction: column;
-    gap: 10px; margin-bottom: 28px;
+    gap: 11px; margin-bottom: 28px; flex: 1;
   }
   .pricing-features li {
-    font-size: 13px; color: var(--muted);
+    font-size: 13px; color: var(--ink-mid);
     display: flex; gap: 8px; align-items: flex-start;
     line-height: 1.5;
   }
-  .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.7); }
+  .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.78); }
   .pricing-features li::before {
     content: '';
     width: 16px; height: 16px; flex-shrink: 0;
@@ -504,6 +514,11 @@
   .pricing-card.featured .pricing-features li::before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3.5 3.5L13 4' stroke='%23F0B430' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
+  .pricing-tagline {
+    font-size: 13px; color: var(--forest); font-weight: 500;
+    margin-bottom: 22px; line-height: 1.5;
+  }
+  .pricing-card.featured .pricing-tagline { color: var(--amber-light); }
   .btn-pricing {
     width: 100%; padding: 14px; border-radius: var(--r-pill);
     border: none; font-family: var(--sans); font-size: 14px;
@@ -517,9 +532,25 @@
   }
   .btn-pricing.outline:hover { background: var(--forest); color: #fff; }
   .btn-pricing.solid { background: var(--amber); color: #fff; }
-  .btn-pricing.solid:hover { background: var(--amber-light); }
+  .btn-pricing.solid:hover { background: var(--amber-light); color: var(--ink); }
+  .btn-pricing.ghost-light {
+    background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.3);
+    color: #fff;
+  }
+  .btn-pricing.ghost-light:hover { background: rgba(255,255,255,0.2); }
 
-  /* ── TESTIMONIALS - non-card layout ── */
+  /* ── COMMITMENT band ── */
+  .commit-band { padding: 56px 5vw; text-align: center; }
+  .commit-inner { max-width: 720px; margin: 0 auto; }
+  .commit-inner p {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.4vw, 28px);
+    font-weight: 400; font-style: italic; line-height: 1.5;
+    color: var(--forest);
+  }
+  .commit-inner span { color: var(--muted); font-family: var(--sans); font-style: normal; font-size: 15px; display: block; margin-top: 12px; }
+
+  /* ── TESTIMONIALS - stacked rows ── */
   .testi-section { padding: 100px 5vw; }
   .testi-inner { max-width: 1200px; margin: 0 auto; }
   .testi-heading {
@@ -531,7 +562,6 @@
   }
   .testi-heading em { color: var(--forest); font-style: italic; }
 
-  /* Stacked rows, alternating layout */
   .testi-list { display: flex; flex-direction: column; gap: 0; }
   .testi-row {
     display: grid; grid-template-columns: 1fr 2fr;
@@ -543,10 +573,11 @@
   .testi-author-info { padding-top: 4px; }
   .testi-avatar {
     width: 44px; height: 44px; border-radius: 50%;
-    background: var(--bone-deep);
+    background: var(--bone-deep); color: var(--forest);
     display: flex; align-items: center; justify-content: center;
-    font-size: 20px; margin-bottom: 12px;
+    margin-bottom: 12px;
   }
+  .testi-avatar svg { width: 22px; height: 22px; }
   .testi-name { font-size: 15px; font-weight: 500; color: var(--ink); }
   .testi-meta { font-size: 12px; color: var(--muted); margin-top: 3px; }
   .testi-quote {
@@ -563,10 +594,6 @@
   .form-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 
   .form-left { position: sticky; top: 100px; }
-  .form-eyebrow {
-    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--amber-light); font-weight: 500; margin-bottom: 20px; display: block;
-  }
   .form-title {
     font-family: var(--serif);
     font-size: clamp(30px, 3.5vw, 52px);
@@ -575,31 +602,32 @@
   }
   .form-title em { color: var(--amber-light); font-style: italic; }
   .form-desc {
-    font-size: 15px; color: rgba(255,255,255,0.6);
+    font-size: 16px; color: rgba(255,255,255,0.65);
     line-height: 1.75; max-width: 380px;
   }
   .form-trust {
     margin-top: 40px; padding-top: 32px;
     border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 13px; color: rgba(255,255,255,0.45);
+    font-size: 14px; color: rgba(255,255,255,0.5);
+    line-height: 1.7;
   }
-  .form-trust strong { color: rgba(255,255,255,0.75); display: block; margin-bottom: 4px; }
+  .form-trust strong { color: rgba(255,255,255,0.85); display: block; margin-bottom: 4px; }
 
   .contact-form { display: flex; flex-direction: column; gap: 16px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .form-field { display: flex; flex-direction: column; gap: 6px; }
-  .form-field label { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.65); letter-spacing: 0.05em; }
+  .form-field label { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.7); letter-spacing: 0.05em; }
   .form-field input,
   .form-field select,
   .form-field textarea {
     background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.14);
     border-radius: var(--r-sm); padding: 13px 14px;
     font-family: var(--sans); font-size: 16px; color: #fff;
     outline: none; transition: border-color .2s, background .2s;
     -webkit-appearance: none; appearance: none; min-height: 50px;
   }
-  .form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,0.38); }
   .form-field input:focus,
   .form-field select:focus,
   .form-field textarea:focus {
@@ -608,7 +636,7 @@
     box-shadow: 0 0 0 3px rgba(240,180,48,0.15);
   }
   .form-field select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.45)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.5)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat; background-position: right 14px center;
     padding-right: 36px; cursor: pointer;
   }
@@ -623,12 +651,13 @@
   }
   .btn-form:hover { background: var(--amber-light); color: var(--ink); }
   .btn-form:disabled { background: rgba(255,255,255,0.2); cursor: not-allowed; }
-  .form-note { text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 10px; }
+  .form-note { text-align: center; font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 10px; }
   .zalo-link {
     display: block; text-align: center; margin-top: 16px;
-    font-size: 13px; color: rgba(255,255,255,0.5);
+    font-size: 14px; color: rgba(255,255,255,0.55);
   }
-  .zalo-link a { color: var(--amber-light); text-decoration: none; }
+  .zalo-link a { color: var(--amber-light); text-decoration: none; font-weight: 500; }
+  .zalo-link a:hover { text-decoration: underline; }
 
   /* ── FAQ ── */
   .faq-section { padding: 100px 5vw; }
@@ -644,7 +673,7 @@
   .faq-item { border-bottom: 1px solid var(--bone-deep); }
   .faq-q {
     width: 100%; text-align: left; background: none; border: none;
-    padding: 20px 0; font-family: var(--sans); font-size: 15px;
+    padding: 20px 0; font-family: var(--sans); font-size: 16px;
     font-weight: 500; color: var(--ink); cursor: pointer;
     display: flex; justify-content: space-between; align-items: center; gap: 16px;
     min-height: 60px;
@@ -655,7 +684,7 @@
   }
   .faq-item.open .faq-icon { transform: rotate(45deg); }
   .faq-a {
-    font-size: 14px; color: var(--muted); line-height: 1.75;
+    font-size: 15px; color: var(--muted); line-height: 1.75;
     overflow: hidden;
     display: grid; grid-template-rows: 0fr;
     transition: grid-template-rows .3s ease;
@@ -663,6 +692,22 @@
   .faq-a-inner { overflow: hidden; }
   .faq-item.open .faq-a { grid-template-rows: 1fr; }
   .faq-item.open .faq-a-inner { padding-bottom: 20px; }
+
+  /* ── FINAL CTA ── */
+  .final-cta { padding: 110px 5vw; text-align: center; background: var(--bone-deep); }
+  .final-cta-inner { max-width: 680px; margin: 0 auto; }
+  .final-cta h2 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 400; line-height: 1.12;
+    letter-spacing: -0.02em; margin-bottom: 20px;
+  }
+  .final-cta h2 em { color: var(--forest); font-style: italic; }
+  .final-cta p { font-size: 16px; color: var(--ink-mid); line-height: 1.7; margin-bottom: 32px; }
+  .final-cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; align-items: center; }
+  .final-cta-zalo { font-size: 14px; color: var(--muted); }
+  .final-cta-zalo a { color: var(--forest); text-decoration: none; font-weight: 500; }
+  .final-cta-zalo a:hover { text-decoration: underline; }
 
   /* ── FOOTER ── */
   footer {
@@ -699,13 +744,12 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
     .hero { grid-template-columns: 1fr; padding-bottom: 60px; }
-    .hero-left { padding-right: 0; padding-bottom: 40px; max-width: 560px; }
+    .hero-left { padding-right: 0; padding-bottom: 40px; max-width: 580px; }
     .hero-right { display: none; }
-    .why-layout { grid-template-columns: 1fr; gap: 48px; }
-    .services-bento { grid-template-columns: repeat(2, 1fr); }
-    .svc-card.wide { grid-column: span 2; }
-    .portfolio-grid { grid-template-columns: 1fr 1fr; }
-    .portfolio-grid .portfolio-card:last-child { display: none; }
+    .why-layout { grid-template-columns: 1fr; gap: 40px; }
+    .oapo-block { grid-template-columns: 1fr; gap: 24px; }
+    .story-layout { grid-template-columns: 1fr; gap: 40px; }
+    .story-media { aspect-ratio: 16/10; order: -1; }
     .process-layout { grid-template-columns: 1fr; gap: 48px; }
     .process-left { position: static; }
     .form-layout { grid-template-columns: 1fr; gap: 48px; }
@@ -715,33 +759,20 @@
 
   @media (max-width: 768px) {
     .hero { padding: 88px 5vw 48px; }
-    .hero-proof { gap: 20px; }
-    .services-bento { grid-template-columns: 1fr 1fr; gap: 12px; }
-    .svc-card.wide { grid-column: span 2; display: block; }
-    .portfolio-grid { grid-template-columns: 1fr; }
-    .portfolio-grid .portfolio-card:last-child { display: block; }
+    .hero-actions { width: 100%; }
+    .hero .btn-primary {
+      width: 100%; justify-content: center; text-align: center;
+      white-space: normal; padding: 16px 24px; line-height: 1.35;
+    }
     .pricing-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
     .form-row { grid-template-columns: 1fr; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
     .footer-links { gap: 16px; }
-    .portfolio-header { flex-direction: column; align-items: flex-start; gap: 12px; }
-    .portfolio-note { text-align: left; max-width: 100%; }
-    nav { display: none; }
-    .nav-hamburger { display: flex; }
-    .nav-drawer { display: flex; }
-  }
-
-  @media (max-width: 768px) {
+    .lead-quote { padding: 36px 28px; }
     nav { display: flex; }
     .nav-links { display: none; }
     .nav-hamburger { display: flex; }
     .nav-drawer { display: flex; }
-  }
-
-  @media (max-width: 480px) {
-    .services-bento { grid-template-columns: 1fr; }
-    .svc-card.wide { grid-column: span 1; }
-    .hero-proof { flex-direction: row; gap: 16px; flex-wrap: nowrap; }
   }
 </style>
 </head>
@@ -749,12 +780,13 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">Tâm Web</a>
+  <a href="#hero-wrap" class="nav-logo">Tâm Web</a>
   <div class="nav-links">
-    <a href="#services">Dịch vụ</a>
-    <a href="#portfolio">Demo</a>
+    <a href="#why">Vì sao</a>
+    <a href="#story">Câu chuyện</a>
     <a href="#pricing">Bảng giá</a>
-    <a href="#contact" class="nav-cta">Đặt ngay</a>
+    <a href="#faq">Hỏi đáp</a>
+    <a href="#contact" class="nav-cta">Nhận demo 24h</a>
   </div>
   <button class="nav-hamburger" id="hamburger" aria-label="Mở menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -762,48 +794,32 @@
 </nav>
 
 <nav class="nav-drawer" id="navDrawer" aria-hidden="true">
-  <a href="#services" class="drawer-link">Dịch vụ</a>
-  <a href="#portfolio" class="drawer-link">Demo</a>
-  <a href="#pricing" class="drawer-link">Bảng giá</a>
+  <a href="#why" class="drawer-link">Vì sao</a>
+  <a href="#story" class="drawer-link">Câu chuyện</a>
   <a href="#process" class="drawer-link">Quy trình</a>
-  <a href="#contact" class="nav-cta-mobile drawer-link">Đặt ngay</a>
+  <a href="#pricing" class="drawer-link">Bảng giá</a>
+  <a href="#faq" class="drawer-link">Hỏi đáp</a>
+  <a href="#contact" class="nav-cta-mobile drawer-link">Nhận demo 24h</a>
 </nav>
 
-<!-- HERO -->
+<!-- ① HERO -->
 <section class="hero" id="hero-wrap">
   <div class="hero-left">
-    <h1>Một trang web<br>cho người<br><em>bạn thương.</em></h1>
-    <p class="hero-sub">Ngày Mẹ, Valentine, Sinh nhật, Kỷ niệm — chúng tôi biến khoảnh khắc đặc biệt thành trang web đẹp, cảm xúc, đáng nhớ mãi.</p>
+    <h1>Năm nay bạn không muốn lại tặng hoa rồi <em>3 ngày sau tàn.</em></h1>
+    <p class="hero-sub">Tâm Web tạo một trang web cảm xúc từ ảnh và kỷ niệm của hai bạn — thứ họ có thể mở lại dù 1 năm hay 10 năm sau.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Tạo trang web ngay</a>
-      <a href="#portfolio" class="btn-ghost">
-        Xem demo
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+      <a href="#contact" class="btn-primary">Kể câu chuyện của bạn — nhận demo trong 24h</a>
     </div>
-    <div class="hero-proof">
-      <div class="proof-item">
-        <span class="proof-num">24h</span>
-        <span class="proof-label">Nhận demo</span>
-      </div>
-      <div class="proof-item">
-        <span class="proof-num">8+</span>
-        <span class="proof-label">Dịp đặc biệt</span>
-      </div>
-      <div class="proof-item">
-        <span class="proof-num">100%</span>
-        <span class="proof-label">Cảm xúc thật</span>
-      </div>
-    </div>
+    <p class="hero-reassure">Xem thử trước. Ưng ý mới trả tiền.</p>
   </div>
 
   <div class="hero-right" aria-hidden="true">
     <img
       class="hero-img"
-      src="https://picsum.photos/seed/tamweb-mother-daughter/640/900"
+      src="assets/images/proof-web-tren-dien-thoai.png"
       alt=""
       loading="eager"
-      width="640" height="900"
+      width="1080" height="1920"
     >
     <div class="hero-badge">
       <span class="badge-pulse"></span>
@@ -812,228 +828,188 @@
   </div>
 </section>
 
-<!-- WHY -->
-<section class="why-section">
+<!-- ② LEAD — đoạn đồng cảm -->
+<section class="lead-section">
+  <div class="lead-inner">
+    <p class="lead-text fade-up">Bạn muốn tặng thứ gì đó khác. Không phải hoa héo sau 3 ngày, không phải tin nhắn cuộn mất trong đống chat, không phải món đồ nằm góc tủ. Bạn muốn họ mở ra — và <em>thật sự xúc động.</em></p>
+    <p class="lead-body fade-up">Tâm Web biến vài tấm ảnh và vài câu kỷ niệm của bạn thành một trang web đẹp, có nhạc, có câu chuyện — một link riêng chỉ dành cho họ. Bạn không cần biết gì về thiết kế. Chỉ cần kể.</p>
+  </div>
+</section>
+
+<!-- ③ TESTIMONIAL MỞ ĐƯỜNG -->
+<section class="lead-quote-section">
+  <div class="lead-quote-inner">
+    <div class="lead-quote fade-up">
+      <blockquote>"Mẹ tôi mở link ra khóc. Bà không biết dùng điện thoại nhiều, nhưng cứ nhờ tôi mở trang đó cho xem lại hoài."</blockquote>
+      <div class="lead-quote-author">
+        <span class="lead-quote-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4"/></svg>
+        </span>
+        <div>
+          <div class="lead-quote-name">Minh Khoa</div>
+          <div class="lead-quote-meta">Trang Ngày Mẹ · Gói Nâng cao</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ UNIQUE MECHANISM -->
+<section class="why-section" id="why">
   <div class="why-inner">
     <div class="why-layout">
       <div class="why-left fade-up">
         <h2 class="why-heading">Tin nhắn mất đi,<br><em>trang web ở lại.</em></h2>
-        <p class="why-body">Một link duy nhất - họ có thể mở lại bất cứ lúc nào, dù 1 năm hay 10 năm sau.</p>
+        <p class="why-body">Quà của bạn bị quên không phải vì bạn vô tâm — mà vì mọi thứ bạn tặng đều trôi đi.</p>
       </div>
       <div class="why-right">
         <div class="why-list">
           <div class="why-item fade-up">
-            <span class="why-num">01</span>
+            <span class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
             <div>
-              <div class="why-title">Tin nhắn mất sau vài ngày</div>
-              <div class="why-desc">Cuộn lên là biến mất. Một trang web thì lưu lại mãi, mở được bất cứ lúc nào.</div>
+              <div class="why-title">Tin nhắn cuộn lên là biến mất</div>
+              <div class="why-desc">Trang web thì lưu lại mãi, mở được bất cứ lúc nào.</div>
             </div>
           </div>
           <div class="why-item fade-up" style="transition-delay:.06s">
-            <span class="why-num">02</span>
+            <span class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
             <div>
               <div class="why-title">Ảnh lẫn vào hàng nghìn ảnh khác</div>
-              <div class="why-desc">Trong trang web, từng khoảnh khắc được chọn lọc, trình bày đẹp, có câu chuyện.</div>
+              <div class="why-desc">Trong trang web, từng khoảnh khắc được chọn lọc, trình bày đẹp.</div>
             </div>
           </div>
           <div class="why-item fade-up" style="transition-delay:.12s">
-            <span class="why-num">03</span>
+            <span class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
             <div>
-              <div class="why-title">Người nhận sẽ chia sẻ khắp nơi</div>
-              <div class="why-desc">Trang web cảm xúc thu hút chia sẻ - họ gửi cho cả nhà, đăng lên mạng, lưu mãi.</div>
+              <div class="why-title">Story trôi sau 24 giờ</div>
+              <div class="why-desc">Trang web thì họ bookmark, mở lại bất cứ lúc nào.</div>
             </div>
           </div>
+          <p class="why-closer fade-up">Đó là trang web duy nhất họ có thể mở lại — dù 1 năm hay 10 năm sau.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services-section" id="services">
-  <div class="services-inner">
-    <div class="section-head">
-      <h2 class="section-title">Dịp nào cũng có thể<br>thành <em>trang web đẹp.</em></h2>
-      <p class="section-sub">Chỉ cần kể cho chúng tôi nghe câu chuyện - chúng tôi lo phần còn lại.</p>
+<!-- ⑤ OAPO BODY — 3 khối xử lý lo lắng -->
+<section class="body-section" id="body">
+  <div class="body-inner">
+    <div class="body-head fade-up">
+      <h2>Ba điều bạn đang phân vân,<br><em>nói thẳng cho rõ.</em></h2>
+      <p>Không tô hồng. Đây là những gì khách hàng hỏi nhiều nhất trước khi đặt.</p>
     </div>
-    <div class="services-bento">
-      <!-- Wide featured card -->
-      <div class="svc-card wide featured fade-up">
-        <div>
-          <span class="svc-icon">🌸</span>
-          <div class="svc-name">Ngày Mẹ / Ngày Cha</div>
-          <div class="svc-desc">Gửi lời yêu thương qua hành trình ảnh và câu chuyện gia đình. Loại được đặt nhiều nhất.</div>
+
+    <!-- Khối 1 -->
+    <div class="oapo-block fade-up">
+      <p class="oapo-worry">"Nhìn quảng cáo thì đẹp, nhưng web của <span class="q">mình</span> làm ra liệu có được vậy không?"</p>
+      <div class="oapo-body">
+        <p>Mình hiểu. Không ai muốn hồi hộp gửi quà rồi nhận lại một cái nhún vai.</p>
+        <p>Nên ở Tâm Web, bạn không cần tin lời mình. Bạn xem trang web hoàn chỉnh trước — đúng ảnh của bạn, đúng câu chuyện của bạn — rồi mới quyết định trả tiền. Nếu chưa ưng, bạn được sửa. Vẫn chưa ưng, bạn không mất gì.</p>
+        <div class="oapo-inline-quote">
+          <blockquote>"Chỉ nhắn vài câu, gửi ảnh, 1 ngày sau nhận link. Đẹp hơn tôi tưởng nhiều."</blockquote>
+          <cite>Anh Tuấn</cite>
         </div>
-        <div class="svc-meta" style="align-self:flex-end">
-          <div class="svc-price">Từ 500.000 VND</div>
-          <div class="svc-time">Giao trong 24-48h</div>
-        </div>
+        <figure class="oapo-proof-slot">
+          <img src="assets/images/proof-web-da-giao.png" alt="Hai trang web cảm xúc thật đã giao hiển thị trên điện thoại — một trang ảnh đôi, một trang timeline kỷ niệm" loading="lazy" width="1200" height="630">
+          <figcaption class="proof-note">Trang web thật đã giao — đúng ảnh, đúng câu chuyện của bạn.</figcaption>
+        </figure>
+        <p class="oapo-takeaway">Rủi ro duy nhất của bạn là… không có rủi ro nào. Bạn chỉ thấy thành phẩm, rồi chọn.</p>
       </div>
-      <!-- Regular cards -->
-      <div class="svc-card fade-up" style="transition-delay:.05s">
-        <span class="svc-icon">❤️</span>
-        <div class="svc-name">Ngày Tình Nhân</div>
-        <div class="svc-desc">Kể lại câu chuyện tình yêu qua ảnh, nhạc và lời nhắn.</div>
-        <div class="svc-meta">
-          <div class="svc-price">Từ 1 triệu</div>
-          <div class="svc-time">Giao trong 24h</div>
+    </div>
+
+    <!-- Khối 2 -->
+    <div class="oapo-block fade-up">
+      <p class="oapo-worry">"Mình vụng nói, không biết viết, <span class="q">lỡ kể lủng củng</span> thì web cũng dở theo."</p>
+      <div class="oapo-body">
+        <p>Đây là điều khiến nhiều người ngại nhất. Họ thương thật, nhưng không biết diễn đạt.</p>
+        <p>Bạn không cần là người viết hay. Bạn chỉ cần là người nhớ. Gửi mình vài câu rời rạc cũng được — "tụi mình quen nhau ở quán cà phê đó", "lần đầu cô ấy giận dỗi vì mình quên sinh nhật" — phần sắp xếp thành câu chuyện có mạch, có cảm xúc, là việc của Tâm Web.</p>
+        <div class="oapo-inline-quote">
+          <blockquote>"Bạn trai tôi share trang lên story rồi tag tôi. Cả nhóm bạn hỏi làm ở đâu đẹp vậy."</blockquote>
+          <cite>Thu Hà</cite>
         </div>
+        <p class="oapo-takeaway">Bạn bỏ ra 5-10 phút kể chuyện. Đổi lại là khoảnh khắc người ta mở link và lặng đi.</p>
       </div>
-      <div class="svc-card fade-up" style="transition-delay:.10s">
-        <span class="svc-icon">🎂</span>
-        <div class="svc-name">Sinh Nhật</div>
-        <div class="svc-desc">Lời chúc thành bất ngờ đáng nhớ với hiệu ứng và gallery ảnh.</div>
-        <div class="svc-meta">
-          <div class="svc-price">Từ 500.000 VND</div>
-          <div class="svc-time">Giao trong 24h</div>
-        </div>
-      </div>
-      <div class="svc-card tinted fade-up" style="transition-delay:.15s">
-        <span class="svc-icon">💍</span>
-        <div class="svc-name">Kỷ Niệm Ngày Cưới</div>
-        <div class="svc-desc">Lưu giữ hành trình yêu thương của một gia đình qua năm tháng.</div>
-        <div class="svc-meta">
-          <div class="svc-price">Từ 1,5 triệu</div>
-          <div class="svc-time">Giao trong 48h</div>
-        </div>
-      </div>
-      <div class="svc-card fade-up" style="transition-delay:.20s">
-        <span class="svc-icon">🎓</span>
-        <div class="svc-name">Tốt Nghiệp</div>
-        <div class="svc-desc">Chúc mừng cột mốc trưởng thành bằng trang web đáng tự hào.</div>
-        <div class="svc-meta">
-          <div class="svc-price">Từ 500.000 VND</div>
-          <div class="svc-time">Giao trong 24h</div>
-        </div>
-      </div>
-      <div class="svc-card tinted fade-up" style="transition-delay:.25s">
-        <span class="svc-icon">🕯️</span>
-        <div class="svc-name">Trang Tưởng Nhớ</div>
-        <div class="svc-desc">Không gian lưu giữ ký ức về người thân yêu đã khuất.</div>
-        <div class="svc-meta">
-          <div class="svc-price">Từ 2 triệu</div>
-          <div class="svc-time">Giao trong 48-72h</div>
-        </div>
-      </div>
-      <!-- Wide card for high-end services -->
-      <div class="svc-card wide fade-up" style="transition-delay:.30s">
-        <div>
-          <span class="svc-icon">💕</span>
-          <div class="svc-name">Chuyện Tình Yêu</div>
-          <div class="svc-desc">Cuốn phim online kể lại hành trình của hai người - từ lúc gặp đến nay. Thiết kế độc bản, cinematic.</div>
-        </div>
-        <div class="svc-meta" style="align-self:flex-end">
-          <div class="svc-price">Từ 3 triệu</div>
-          <div class="svc-time">Giao trong 48-72h</div>
-        </div>
+    </div>
+
+    <!-- Khối 3 -->
+    <div class="oapo-block fade-up">
+      <p class="oapo-worry">"Mình tặng một kỷ niệm, mà một năm sau nó <span class="q">biến mất</span> thì còn gì là kỷ niệm?"</p>
+      <div class="oapo-body">
+        <p>Một lo lắng rất đúng, vì cả điểm hấp dẫn của Tâm Web là thứ ở lại.</p>
+        <p>Hết hạn không phải là mất. Khi gần đến hạn, bạn gia hạn hoặc nâng lên gói cao hơn — dữ liệu, ảnh, câu chuyện vẫn nguyên. Còn nếu muốn không bao giờ phải nghĩ đến chuyện này nữa, gói VIP giữ link mãi mãi.</p>
+        <p class="oapo-takeaway">Bạn chọn được tình cảm này sống bao lâu — một năm, hai năm, hay mãi mãi.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section class="portfolio-section" id="portfolio">
-  <div class="portfolio-inner">
-    <div class="portfolio-header">
-      <h2 class="portfolio-title fade-up">Xem trước<br>khi <em>quyết định.</em></h2>
-      <p class="portfolio-note fade-up">Mỗi trang đều là bản thật - click vào để cảm nhận trước khi đặt.</p>
-    </div>
-    <div class="portfolio-grid">
-      <div class="portfolio-card fade-up">
-        <div class="portfolio-thumb p1">
-          <div class="portfolio-thumb-inner">
-            <span>🌸</span>
-            <span class="portfolio-thumb-label">Ngày Mẹ</span>
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-kind">Ngày Mẹ</div>
-          <div class="portfolio-name">Mẹ yêu của con</div>
-          <div class="portfolio-meta">Build 3h - Warm & Elegant</div>
-          <a href="#contact" class="portfolio-link">
-            Tạo trang tương tự
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+<!-- BRAND STORY (thay cho portfolio fake) -->
+<section class="story-section" id="story">
+  <div class="story-inner">
+    <div class="story-layout">
+      <div class="story-text fade-up">
+        <span class="story-eyebrow">Câu chuyện Tâm Web</span>
+        <h2 class="story-heading">Chúng tôi làm web <em>từ tâm.</em></h2>
+        <div class="story-body">
+          <p>Tâm Web bắt đầu từ một niềm tin đơn giản: thứ đáng giữ nhất giữa người với người là cảm xúc, mà cảm xúc thì rất dễ trôi đi.</p>
+          <p>Mỗi trang chúng tôi làm không phải là một sản phẩm sao chép hàng loạt. Đó là câu chuyện thật của bạn, được lắng nghe kỹ, sắp xếp tỉ mỉ và trình bày sao cho người nhận mở ra là thấy mình trong đó.</p>
+          <p>Khi bạn gửi gắm một kỷ niệm, chúng tôi nhận lấy nó bằng cùng sự nâng niu mà bạn dành cho người ấy. Đó là lý do cái tên là Tâm Web.</p>
         </div>
       </div>
-      <div class="portfolio-card fade-up" style="transition-delay:.08s">
-        <div class="portfolio-thumb p2">
-          <div class="portfolio-thumb-inner">
-            <span>❤️</span>
-            <span class="portfolio-thumb-label">Valentine</span>
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-kind">Valentine</div>
-          <div class="portfolio-name">Chuyện của chúng mình</div>
-          <div class="portfolio-meta">Build 4h - Romantic</div>
-          <a href="#contact" class="portfolio-link">
-            Tạo trang tương tự
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="portfolio-card fade-up" style="transition-delay:.16s">
-        <div class="portfolio-thumb p3">
-          <div class="portfolio-thumb-inner">
-            <span>🎂</span>
-            <span class="portfolio-thumb-label">Sinh nhật</span>
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-kind">Sinh Nhật</div>
-          <div class="portfolio-name">Happy birthday An!</div>
-          <div class="portfolio-meta">Build 2h - Playful & Fun</div>
-          <a href="#contact" class="portfolio-link">
-            Tạo trang tương tự
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
+      <div class="story-media fade-up">
+        <img src="assets/images/lam-web-tu-tam.png" alt="Góc làm việc của Tâm Web — laptop, ảnh kỷ niệm in ra và ánh đèn ấm" loading="lazy" width="1200" height="630">
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- ⑥ PROCESS — 4 bước -->
 <section class="process-section" id="process">
   <div class="process-inner">
     <div class="process-layout">
       <div class="process-left fade-up">
-        <span class="process-eyebrow">Quy trình</span>
-        <h2 class="process-heading">Đơn giản như<br><em>kể một câu chuyện.</em></h2>
-        <p class="process-desc">Bạn không cần biết gì về thiết kế. Chỉ cần kể và gửi ảnh - chúng tôi lo toàn bộ còn lại.</p>
+        <h2 class="process-heading">Bạn chỉ làm 1 việc.<br><em>Tâm Web lo phần còn lại.</em></h2>
+        <p class="process-desc">Bạn không cần biết gì về thiết kế. Chỉ cần kể và gửi ảnh — toàn bộ phần còn lại là việc của chúng tôi.</p>
+        <p class="process-reassure">Kể chuyện thôi. Phần khó để chúng tôi.</p>
       </div>
       <div class="process-steps">
         <div class="process-step fade-up">
           <div class="step-num">1</div>
           <div class="step-body">
-            <div class="step-title">Bạn kể, chúng tôi nghe</div>
-            <div class="step-desc">Điền form đơn giản: loại trang, tên người nhận, vài câu kỷ niệm, và gửi ảnh qua Zalo hoặc Drive.</div>
-            <span class="step-tag">Chỉ mất 5-10 phút</span>
+            <div class="step-title">Kể chuyện</div>
+            <div class="step-desc">Gửi vài câu kỷ niệm, 3-20 tấm ảnh và tên người nhận.</div>
+            <span class="step-tag">Mất 5-10 phút</span>
           </div>
         </div>
         <div class="process-step fade-up" style="transition-delay:.08s">
           <div class="step-num">2</div>
           <div class="step-body">
-            <div class="step-title">Nhận demo trong 24 giờ</div>
-            <div class="step-desc">Chúng tôi thiết kế và gửi link demo để bạn xem thử trên điện thoại, đúng như người nhận sẽ thấy.</div>
+            <div class="step-title">Nhận demo</div>
+            <div class="step-desc">Trong 24h, bạn nhận link trang web hoàn chỉnh để xem thử.</div>
             <span class="step-tag">Link xem thử miễn phí</span>
           </div>
         </div>
         <div class="process-step fade-up" style="transition-delay:.16s">
           <div class="step-num">3</div>
           <div class="step-body">
-            <div class="step-title">Chỉnh đến khi ưng ý</div>
-            <div class="step-desc">Muốn thay màu, thêm ảnh, đổi câu chữ? Cứ nói. Tối đa 3 lần chỉnh sửa - không tính phí thêm.</div>
-            <span class="step-tag">Tối đa 3 lần revise</span>
+            <div class="step-title">Sửa cho ưng</div>
+            <div class="step-desc">Chưa đúng ý? Mình sửa lại đến khi bạn hài lòng.</div>
+            <span class="step-tag">Tối đa 3 lần với gói Nâng cao</span>
           </div>
         </div>
         <div class="process-step fade-up" style="transition-delay:.24s">
           <div class="step-num">4</div>
           <div class="step-body">
-            <div class="step-title">Nhận link - tặng ngay</div>
-            <div class="step-desc">Sau khi duyệt, bạn nhận link riêng để tặng. Trang hoạt động 1 năm (hoặc mãi mãi với gói VIP).</div>
-            <span class="step-tag">Link mãi mãi với gói VIP</span>
+            <div class="step-title">Nhận link</div>
+            <div class="step-desc">Ưng ý rồi mới thanh toán. Nhận link riêng để gửi cho người ấy.</div>
+            <span class="step-tag">Thanh toán sau khi duyệt</span>
           </div>
         </div>
       </div>
@@ -1041,63 +1017,82 @@
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- ⑦ CLOSE — Reframe giá -->
+<section class="close-section">
+  <div class="close-inner">
+    <p class="close-lead fade-up">Một bó hoa đẹp cũng 300-500k, và ba ngày sau bạn bỏ nó vào thùng rác. Một bữa ăn kỷ niệm cũng 1-2 triệu, <em>ăn xong là hết.</em></p>
+    <p class="close-body fade-up">Còn Tâm Web — cùng khoảng tiền đó — nhưng họ mở lại vào sinh nhật năm sau, vào cái đêm nhớ bạn, vào lúc khoe với bạn bè. Bạn không mua một món quà. <strong>Bạn mua số lần họ được xúc động trong nhiều năm tới.</strong></p>
+  </div>
+</section>
+
+<!-- ⑧ PRICING -->
 <section class="pricing-section" id="pricing">
   <div class="pricing-inner">
     <div class="pricing-header">
-      <h2 class="pricing-heading fade-up">Giá rõ ràng,<br><em>không phát sinh.</em></h2>
+      <h2 class="pricing-heading fade-up">Chọn mức tình cảm<br><em>này sống bao lâu.</em></h2>
       <p class="pricing-sub fade-up">Xem demo trước, thanh toán sau khi ưng ý.</p>
     </div>
     <div class="pricing-grid">
       <div class="pricing-card fade-up">
         <div class="pricing-tier">Cơ bản</div>
         <div class="pricing-price"><sup>từ </sup>500K</div>
-        <div class="pricing-note">Phù hợp dịp đơn giản, cần gấp</div>
+        <div class="pricing-note">Bằng một bó hoa — nhưng không tàn.</div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
           <li>1 trang cảm xúc hoàn chỉnh</li>
           <li>Tối đa 10 ảnh</li>
           <li>Nhạc nền từ thư viện</li>
-          <li>Link xem 1 năm</li>
+          <li>Link xem 1 năm (gia hạn bất cứ lúc nào)</li>
           <li>1 lần chỉnh sửa</li>
           <li>Giao trong 24h</li>
         </ul>
-        <a href="#contact" class="btn-pricing outline">Đặt gói này</a>
+        <p class="pricing-tagline">Tặng món quà không tàn.</p>
+        <a href="#contact" class="btn-pricing outline" data-package="Cơ bản">Đặt gói này</a>
       </div>
       <div class="pricing-card featured fade-up" style="transition-delay:.10s">
-        <div class="featured-label">Phổ biến nhất</div>
+        <div class="featured-label">Được chọn nhiều nhất</div>
         <div class="pricing-tier">Nâng cao</div>
         <div class="pricing-price"><sup>từ </sup>1,5tr</div>
-        <div class="pricing-note">Phù hợp với hầu hết mọi dịp</div>
+        <div class="pricing-note">Bằng một bữa ăn kỷ niệm — nhưng kể được cả câu chuyện hai người.</div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li>Thiết kế cảm xúc cao cấp hơn</li>
+          <li>Thiết kế cảm xúc nhiều lớp, có chiều sâu</li>
           <li>Không giới hạn ảnh</li>
           <li>Nhạc nền theo yêu cầu</li>
-          <li>Timeline nhiều chương</li>
-          <li>Link xem 2 năm</li>
+          <li>Timeline nhiều chương — từ ngày đầu đến hôm nay</li>
+          <li>Link xem 2 năm (gia hạn hoặc nâng gói bất cứ lúc nào)</li>
           <li>3 lần chỉnh sửa</li>
           <li>Giao trong 48h</li>
         </ul>
-        <a href="#contact" class="btn-pricing solid">Đặt gói này</a>
+        <p class="pricing-tagline">Kể trọn câu chuyện của hai người.</p>
+        <a href="#contact" class="btn-pricing solid" data-package="Nâng cao">Đặt gói này</a>
       </div>
       <div class="pricing-card fade-up" style="transition-delay:.20s">
         <div class="pricing-tier">VIP</div>
         <div class="pricing-price"><sup>từ </sup>3tr</div>
-        <div class="pricing-note">Cho khoảnh khắc đặc biệt nhất</div>
+        <div class="pricing-note">Một thứ không ai tặng họ được — và không bao giờ mất.</div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li>Thiết kế độc bản</li>
+          <li>Thiết kế độc bản — không dùng lại cho bất kỳ ai</li>
           <li>Video intro cinematic</li>
-          <li>Nhạc tùy chỉnh hoặc bài nhà</li>
-          <li>Mini game / tương tác</li>
+          <li>Nhạc tùy chỉnh — bạn chọn bài, mình gắn vào</li>
+          <li>Mini game / tương tác riêng</li>
           <li>Link mãi mãi</li>
           <li>Không giới hạn chỉnh sửa</li>
           <li>Giao trong 72h</li>
         </ul>
-        <a href="#contact" class="btn-pricing outline">Đặt gói này</a>
+        <p class="pricing-tagline">Giữ kỷ niệm này mãi mãi.</p>
+        <a href="#contact" class="btn-pricing outline" data-package="VIP">Đặt gói này</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ⑨ COMMITMENT -->
+<section class="commit-band">
+  <div class="commit-inner fade-up">
+    <p>Dù bạn chọn gói nào: bạn xem demo trong 24h trước. Ưng ý mới thanh toán.</p>
+    <span>Không ưng, không mất gì.</span>
   </div>
 </section>
 
@@ -1108,9 +1103,11 @@
     <div class="testi-list">
       <div class="testi-row fade-up">
         <div class="testi-author-info">
-          <div class="testi-avatar">👨</div>
+          <div class="testi-avatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
           <div class="testi-name">Minh Khoa</div>
-          <div class="testi-meta">Trang Ngày Mẹ - Gói Nâng cao</div>
+          <div class="testi-meta">Trang Ngày Mẹ · Gói Nâng cao</div>
         </div>
         <blockquote class="testi-quote">
           "Mẹ tôi mở link ra khóc. Bà không biết dùng điện thoại nhiều, nhưng cứ nhờ tôi mở trang đó cho xem lại hoài."
@@ -1118,9 +1115,11 @@
       </div>
       <div class="testi-row fade-up" style="transition-delay:.08s">
         <div class="testi-author-info">
-          <div class="testi-avatar">👩</div>
-          <div class="testi-name">Thu Ha</div>
-          <div class="testi-meta">Trang Valentine - Gói VIP</div>
+          <div class="testi-avatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="testi-name">Thu Hà</div>
+          <div class="testi-meta">Trang Valentine · Gói VIP</div>
         </div>
         <blockquote class="testi-quote">
           "Bạn trai tôi share trang lên story rồi tag tôi. Cả nhóm bạn hỏi làm ở đâu đẹp vậy. Quá xứng đáng!"
@@ -1128,9 +1127,11 @@
       </div>
       <div class="testi-row fade-up" style="transition-delay:.16s">
         <div class="testi-author-info">
-          <div class="testi-avatar">👨</div>
-          <div class="testi-name">Anh Tuan</div>
-          <div class="testi-meta">Album Sinh Nhật Con - Gói Cơ bản</div>
+          <div class="testi-avatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="testi-name">Anh Tuấn</div>
+          <div class="testi-meta">Trang Sinh Nhật Con · Gói Cơ bản</div>
         </div>
         <blockquote class="testi-quote">
           "Chỉ nhắn vài câu, gửi ảnh, 1 ngày sau nhận link. Đẹp hơn tôi tưởng nhiều. Con bé cứ tự mở xem mãi."
@@ -1145,12 +1146,11 @@
   <div class="form-inner">
     <div class="form-layout">
       <div class="form-left fade-up">
-        <span class="form-eyebrow">Bắt đầu ngay</span>
         <h2 class="form-title">Bắt đầu từ một<br><em>câu chuyện nhỏ.</em></h2>
-        <p class="form-desc">Điền thông tin bên cạnh - chúng tôi sẽ gửi demo trong vòng 24 giờ. Miễn phí xem thử, thanh toán sau khi ưng ý.</p>
+        <p class="form-desc">Điền thông tin bên cạnh — chúng tôi gửi demo trong vòng 24 giờ. Miễn phí xem thử, thanh toán sau khi ưng ý.</p>
         <div class="form-trust">
           <strong>Cam kết của Tâm Web</strong>
-          Demo trong 24h. Xem trước - thanh toán sau. Không ưng không mất gì.
+          Demo trong 24h. Xem trước, thanh toán sau. Không ưng, không mất gì.
         </div>
       </div>
       <div class="fade-up" style="transition-delay:.08s">
@@ -1167,7 +1167,7 @@
                 <option>Tốt Nghiệp</option>
                 <option>Trang Tưởng Nhớ</option>
                 <option>Chuyện Tình Yêu</option>
-                <option>Album Trưởng Thành</option>
+                <option>Dịp khác</option>
               </select>
             </div>
             <div class="form-field">
@@ -1177,18 +1177,16 @@
           </div>
           <div class="form-field">
             <label for="story">Câu chuyện muốn kể</label>
-            <textarea id="story" name="story" placeholder="Kể 3-5 câu về kỷ niệm, cảm xúc bạn muốn gửi gắm..."></textarea>
+            <textarea id="story" name="story" placeholder="Kể vài câu kỷ niệm, cảm xúc bạn muốn gửi gắm. Rời rạc cũng được, phần còn lại để Tâm Web lo."></textarea>
           </div>
           <div class="form-row">
             <div class="form-field">
-              <label for="style">Phong cách mong muốn</label>
-              <select id="style" name="style">
+              <label for="package">Gói mong muốn</label>
+              <select id="package" name="package">
                 <option value="">Để Tâm Web tư vấn</option>
-                <option>Ấm áp &amp; Vintage</option>
-                <option>Lãng mạn &amp; Elegant</option>
-                <option>Vui tươi &amp; Playful</option>
-                <option>Tối giản &amp; Sang trọng</option>
-                <option>Cinematic &amp; Cảm xúc mạnh</option>
+                <option>Cơ bản — từ 500K</option>
+                <option>Nâng cao — từ 1,5tr</option>
+                <option>VIP — từ 3tr</option>
               </select>
             </div>
             <div class="form-field">
@@ -1196,56 +1194,68 @@
               <input type="tel" id="phone" name="phone" placeholder="Để gửi demo qua đây" autocomplete="tel">
             </div>
           </div>
-          <button type="submit" class="btn-form" id="submitBtn">Gửi yêu cầu - nhận demo trong 24h</button>
+          <button type="submit" class="btn-form" id="submitBtn">Gửi yêu cầu — nhận demo trong 24h</button>
           <p class="form-note">Miễn phí xem demo. Thanh toán sau khi duyệt.</p>
         </form>
-        <p class="zalo-link">Hoặc nhắn trực tiếp qua <a href="#">Zalo: 0xxx xxx xxx</a></p>
+        <p class="zalo-link">Hoặc nhắn trực tiếp qua <a href="https://zalo.me/0356203190" target="_blank" rel="noopener">Zalo: 0356 203 190</a></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq-section">
+<!-- ⑩ FAQ -->
+<section class="faq-section" id="faq">
   <div class="faq-inner">
     <h2 class="faq-heading fade-up">Bạn đang<br><em>thắc mắc điều gì?</em></h2>
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          Tôi không biết gì về thiết kế, có làm được không?
+          Tôi không biết gì về thiết kế, làm được không?
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
         </button>
-        <div class="faq-a" role="region"><div class="faq-a-inner">Hoàn toàn không cần. Bạn chỉ cần kể câu chuyện và gửi ảnh - chúng tôi lo toàn bộ phần thiết kế. Nhiều khách hàng chỉ nhắn vài câu qua Zalo là đủ.</div></div>
+        <div class="faq-a" role="region"><div class="faq-a-inner">Được. Bạn chỉ cần kể câu chuyện và gửi ảnh — phần thiết kế là việc của Tâm Web. Nhiều khách chỉ nhắn vài câu qua Zalo là đủ.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          Trang web tồn tại bao lâu?
+          Cần chuẩn bị gì?
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
         </button>
-        <div class="faq-a" role="region"><div class="faq-a-inner">Gói Cơ bản: 1 năm. Gói Nâng cao: 2 năm. Gói VIP: mãi mãi (miễn phí hosting vĩnh viễn). Sau khi hết hạn, bạn có thể gia hạn với chi phí rất nhỏ.</div></div>
+        <div class="faq-a" role="region"><div class="faq-a-inner">Ảnh (3-20 tấm, gửi qua Zalo hoặc Google Drive), vài câu kỷ niệm, và tên người nhận. Vậy là đủ.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          Tôi cần chuẩn bị gì?
+          Link tồn tại bao lâu?
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
         </button>
-        <div class="faq-a" role="region"><div class="faq-a-inner">Chỉ cần: ảnh (3-20 tấm, gửi qua Zalo hoặc Google Drive), vài câu kỷ niệm hoặc lời nhắn, và tên người nhận. Nếu có bài nhạc muốn dùng thì tuyệt - nếu không, chúng tôi sẽ chọn nhạc phù hợp.</div></div>
+        <div class="faq-a" role="region"><div class="faq-a-inner">Cơ bản: 1 năm · Nâng cao: 2 năm · VIP: mãi mãi. Gần hết hạn, bạn gia hạn hoặc nâng gói — không mất dữ liệu, ảnh hay câu chuyện.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          Xem demo trước khi trả tiền không?
+          Có phải trả tiền trước không?
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
         </button>
-        <div class="faq-a" role="region"><div class="faq-a-inner">Có. Chúng tôi làm demo trước, bạn xem và ưng ý mới thanh toán. Nếu không hài lòng, bạn không mất gì cả.</div></div>
+        <div class="faq-a" role="region"><div class="faq-a-inner">Không. Bạn xem demo, ưng ý mới thanh toán. Nếu không hài lòng, bạn không mất gì cả.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
           Người nhận có cần cài app không?
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
         </button>
-        <div class="faq-a" role="region"><div class="faq-a-inner">Không. Trang web mở trực tiếp trên trình duyệt điện thoại hoặc máy tính. Bạn chỉ cần gửi link - họ click là xem ngay, không cần tài khoản hay app.</div></div>
+        <div class="faq-a" role="region"><div class="faq-a-inner">Không. Mở trực tiếp trên trình duyệt — gửi link là xem được ngay, không cần tài khoản hay app.</div></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ⑪ FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner fade-up">
+    <h2>Kể câu chuyện của bạn<br><em>— nhận demo trong 24h.</em></h2>
+    <p>Miễn phí. Chưa cần trả gì. Chỉ cần vài câu và vài tấm ảnh.</p>
+    <div class="final-cta-actions">
+      <a href="#contact" class="btn-primary">Bắt đầu kể câu chuyện</a>
+    </div>
+    <p class="final-cta-zalo" style="margin-top:18px;">Muốn hỏi trước? <a href="https://zalo.me/0356203190" target="_blank" rel="noopener">Nhắn Zalo: 0356 203 190</a></p>
   </div>
 </section>
 
@@ -1254,13 +1264,13 @@
   <div class="footer-inner">
     <div class="footer-logo">Tâm Web</div>
     <div class="footer-links">
-      <a href="#services">Dịch vụ</a>
-      <a href="#portfolio">Demo</a>
-      <a href="#pricing">Bảng giá</a>
+      <a href="#why">Vì sao</a>
+      <a href="#story">Câu chuyện</a>
       <a href="#process">Quy trình</a>
+      <a href="#pricing">Bảng giá</a>
       <a href="#contact">Liên hệ</a>
     </div>
-    <p class="footer-copy">© 2026 Tâm Web · Trang web cảm xúc cho người bạn thương</p>
+    <p class="footer-copy">© 2026 Tâm Web · Món quà không tàn cho người bạn thương</p>
   </div>
 </footer>
 
@@ -1336,13 +1346,26 @@
     });
   });
 
+  // Pricing card → prefill gói trong form
+  document.querySelectorAll('[data-package]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var pkg = link.getAttribute('data-package');
+      var select = document.getElementById('package');
+      if (!select) return;
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].text.indexOf(pkg) === 0) { select.selectedIndex = i; break; }
+      }
+    });
+  });
+
   // Form submit
   var form = document.getElementById('contactForm');
   var submitBtn = document.getElementById('submitBtn');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    submitBtn.textContent = 'Da gui! Chung toi se lien he trong 24h';
+    submitBtn.textContent = 'Đã gửi! Chúng tôi sẽ liên hệ trong 24h';
     submitBtn.style.background = '#2A5240';
+    submitBtn.style.color = '#fff';
     submitBtn.disabled = true;
   });
 }());

@@ -2,6 +2,10 @@
 *.png
 *.jpg
 *.jpeg
+# Ngoại lệ: ảnh asset của trang web phải được track để deploy
+!src/assets/**/*.png
+!src/assets/**/*.jpg
+!src/assets/**/*.jpeg
 .claude/
 .vercel/
 .agents/

@@ -1,5 +1,6 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/src/tamweb.html" }
+    { "source": "/", "destination": "/src/tamweb.html" },
+    { "source": "/assets/(.*)", "destination": "/src/assets/$1" }
   ]
 }
